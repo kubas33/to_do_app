@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
-export default function InputTask({ onAddTask }) {
+export default function InputTask({
+  onAddTask,
+  onUpdateUncompletedTasksCount,
+}) {
   const [taskText, setTask] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const task = {
+      id: 0,
       taskText: taskText,
       isCompleted: false,
     };
