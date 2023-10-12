@@ -1,32 +1,31 @@
-$background-color: #03045E;
-$primary-color: #0077B6;
-$seconday-color: #00B4D8;
-$link-color: #90E0EF;
-$text-color: #CAF0F8;
+$background-color: #43437e;
+$primary-color: #0077b6;
+$seconday-color: #00b4d8;
+$link-color: #90e0ef;
+$text-color: #caf0f8;
 
-@import url('reset.css');
-
+@import url("reset.css");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./images/bg-desktop-dark.jpg');
+  background-image: url("./images/bg-desktop-dark.jpg");
   background-repeat: no-repeat;
   color: $text-color;
   background-color: black;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 h1 {
-  padding: 4rem 0 2rem!important;
+  padding: 4rem 0 2rem !important;
   font-size: 3rem;
   letter-spacing: 1rem;
 }
@@ -48,7 +47,8 @@ button:hover {
   width: fit-content;
 }
 
-.tasks-container, .input {
+.tasks-container,
+.input {
   background-color: $background-color;
   //padding: 1rem 0;
   border-radius: 10px;
@@ -77,20 +77,20 @@ button {
 }
 
 .tasks-container {
-  br{
+  br {
     border: 1px solid $link-color;
   }
-  ul{
+  ul {
     padding: 0;
     margin: 0;
-    &:nth-child(1){
-      padding-top: .5rem;
+    &:nth-child(1) {
+      padding-top: 0.5rem;
     }
   }
 }
 
 .controls {
-  padding: .5rem 1.5rem 1rem;
+  padding: 0.5rem 1.5rem 1rem;
 }
 
 .check-btn {
@@ -99,7 +99,7 @@ button {
   height: 1.3rem;
   border: 1px solid $link-color;
   background-color: transparent;
-  display:inline-block;
+  display: inline-block;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -110,8 +110,8 @@ button {
 .task {
   display: flex;
   flex-direction: row;
-  justify-content:space-between ;
-  padding: .7rem 1.5rem;
+  justify-content: space-between;
+  padding: 0.7rem 1.5rem;
   .task-btn {
     text-align: start;
     display: flex;
@@ -122,18 +122,22 @@ button {
   }
 
   .check-btn.completed + .task-text {
-      text-decoration: line-through;
-      color: scale-color($color: $text-color, $saturation: -80%, $lightness: -50%);
-    }
+    text-decoration: line-through;
+    color: scale-color(
+      $color: $text-color,
+      $saturation: -80%,
+      $lightness: -50%
+    );
+  }
 
-    .check-btn.completed {
-      background-image: url('../public/images/icon-check.svg');
-      background-repeat: no-repeat;
-      //background-size: contain;
-      background-color: $primary-color;
-      background-position: center;
-      border: 1px solid $primary-color;
-    }
+  .check-btn.completed {
+    background-image: url("../public/images/icon-check.svg");
+    background-repeat: no-repeat;
+    //background-size: contain;
+    background-color: $primary-color;
+    background-position: center;
+    border: 1px solid $primary-color;
+  }
 
   .task-text {
     width: 100%;
@@ -152,6 +156,11 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  .counter {
+    font-size: 0.8rem;
+    color: scale-color($color: $text-color, $alpha: -50%);
+  }
 
   ul {
     list-style: none;
@@ -161,5 +170,16 @@ button {
     li {
       padding: 2px 4px;
     }
+  }
+  .filters {
+    .active {
+      color: $primary-color;
+      font-weight: 700;
+    }
+  }
+  button:not(.active):hover {
+    color: $seconday-color;
+    scale: 1.05;
+    transition: all 0.2s;
   }
 }

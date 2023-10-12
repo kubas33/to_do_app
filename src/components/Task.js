@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function Task({ taskData }) {
+export default function Task({ taskData, onComplete }) {
   const toggleCompleted = () => {
     taskData.isCompleted = !taskData.isCompleted;
     setIsCompleted(taskData.isCompleted);
-    console.log(taskData);
+    onComplete();
   };
 
   const [isCompleted, setIsCompleted] = useState(taskData.isCompleted);
