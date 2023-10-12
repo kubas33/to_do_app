@@ -6,6 +6,7 @@ export default function InputTask({ onAddTask }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const task = {
+      id: 0,
       taskText: taskText,
       isCompleted: false,
     };

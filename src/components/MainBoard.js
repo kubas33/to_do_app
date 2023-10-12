@@ -5,8 +5,14 @@ import TasksCont from "./TasksCont";
 export default function MainBoard() {
   const [tasks, setTasks] = useState([]);
 
+  const generateNewId = (tasks) => {Math.max(...tasks.map(i => i.id)) + 1;
+
   const handleAddTask = (newTask) => {
+    const id = generateNewId(tasks);
+    console.log({id});
+    newTask.id = id;
     setTasks([...tasks, newTask]);
+
   };
 
   return (
